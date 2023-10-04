@@ -20,7 +20,7 @@ javascript:(function() {
     document.body.removeEventListener('click', clickListener)
     startTime = new Date();
     stopwatchInterval = setInterval(function() {
-      for (var i = 0; i < mob.length; i++) {
+      for (const obj of mob) {
         if (obj.hasRunDeathScript) {
           stopStopwatch();
           return;
