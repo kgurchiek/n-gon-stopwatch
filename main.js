@@ -20,6 +20,12 @@ javascript:(function() {
     document.body.removeEventListener('click', clickListener)
     startTime = new Date();
     stopwatchInterval = setInterval(function() {
+      for (var i = 0; i < mob.length; i++) {
+        if (obj.hasRunDeathScript) {
+          stopStopwatch();
+          return;
+        }
+      }
       if (simulation.paused && !simulation.isChoosing) {
         if (!wasPaused) lastPause = new Date();
         wasPaused = true;
@@ -41,10 +47,6 @@ javascript:(function() {
   function stopStopwatch() {
     clearInterval(stopwatchInterval);
     stopwatchInterval = null;
-  }
-  function resetStopwatch() {
-    stopStopwatch();
-    stopwatch.innerHTML = '00:00:00.000';
   }
   const clickListener = document.body.addEventListener('click', startStopwatch);
 })();
