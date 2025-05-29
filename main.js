@@ -17,7 +17,7 @@ javascript:(function() {
   var timePaused = 0;
   var stopwatchInterval = null;
   function startStopwatch() {
-    document.body.removeEventListener('click', clickListener)
+    document.body.removeEventListener('click', clickListener);
     startTime = new Date();
     stopwatchInterval = setInterval(function() {
       for (const obj of mob) {
